@@ -1,0 +1,74 @@
+Nume: Anghel Mihai-Gabriel
+Grupa: 323CD
+
+Am urmat recomandarile si am folosit scheletul dein laboratoare.
+
+***Task1***
+ - Solutia pentru acest task are in vedere o metoda de programare dinamica
+   astfel: se sorteaza perechile in functie de capacitatea de productie, iar
+   in timpul parcurgerii, perechile cu aceeasi capacitate de productie vor
+   deveni o singura entitate avand capacitatea de productie egala cu suma
+   capacitatilor tuturor calculatoarelor de acelasi nivel.
+ - Se face update-ul in timpul parcurgerii cat timp costul de upgrade este
+   mai mic decat suma disponibila.
+ - In final, daca s-au parcurs toate calculatoarele si mai sunt bani 
+   disponibili, se face update la toata entitatea finala pana se cheltuiesc
+   toti banii.
+*Complexitate*
+ - sortare: O(n*logn)
+ - parcurgere: O(n)
+ - Complexitate finala: O(n) 
+
+***Task2***
+ - Pentru acest task am folosit programare dinamica. M-am folosit de un tablou
+   tridimensional (datele de intrare nu erau tocmai mari), pentru ca 
+   problema are 3 dimensiuni: nr. de actiuni, suma maxima, pierderea maxima
+ - La fiecare pas calculez profitul maxim pe baza rezultatelor anterioare,
+   iar daca la pasul 'i' nu obtin un profit maxim, se reporteaza profitul
+   de la pasul 'i-1'. Profitul maxim va fi in ultima pozitie din matrice.
+*Complexitate*
+ - parcurgere: O((n+1)*(b+1)*(l+1))
+ - Complexitate finala: O(n*b*l) 
+
+***Task3***
+ - Acest task l-am impartit in 3 cazuri principale pentru a usura logica
+   de functionare, iar computatia ramane eficienta. 
+ - Am luat separat cazul cu n = 3 pentru ca difera oarecum de cazul n > 3 si
+   am calculat rezultatul tinand cont de regulile acestei situatii.
+ - Al doilea caz este cel in care array-ul este in intregime crescator sau
+   descrescator, iar in aceasta situatie trebuie sa ma asigur ca prefixul
+   si sufixul ocupa cel putin 2 pozitii.
+ - Pentru restul situatiilor, pastrez 2 referinte, una din capatul stang,
+   cealalta din capatul drept. Parcurg array-ul dinspre capete spre mijloc
+   si in functie de nivelul referintelor, ori sap in munti de la stanga la
+   dreapta ori invers. Astfel se creeaza o vale.
+*Complexitate*
+ - Verificare daca array-ul este crescator / descrescator: O(n)
+ - parcurgere si rezolvare: O(n)
+ - Complexitate finala: O(n) 
+
+***Task4***
+ - Si pentru acest task am folosit programare dinamica. Un munte poate fi
+   adiacent cu maxim 2 munti, deci practic trebuie sa modific inaltimea a 
+   maxim doi munti, (daca toti 3 au aceeasi inaltime, unul ramane cu inaltimea
+   nemodificata, iar ceilalti doi vor avea inaltimea micsorata cu o unitate,
+   respectiv cu doua unitati.
+ - Folosesc un matrice bidimensionala: o dimensiune pentru munti, iar cealalta
+   pentru unitatile sapate in munti.
+ - Se itereaza prin array-ul de munti si se testeaza fiecare varianta posibila
+   de micsorare a muntilor adiacenti(prin scaderea fiecaruia cu 0, 1 sau 2
+   unitati, practic se fac permutari de posibilitati), iar in final adaug
+   costul rezultat la costul minim partial.
+ - Cand se ajunge la ultima iteratie, extrag costul minim total.
+*Complexitate*
+ - parcurgere + rezolvare: O(3*n)
+
+
+
+
+
+
+
+
+
+
